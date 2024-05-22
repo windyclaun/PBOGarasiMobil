@@ -10,13 +10,13 @@ package Model;
  * @author Asus
  */
 public class DataMobil {
-    private string nama;
-    private string nomor_plat;
-    private string merk;
+    private String nama;
+    private String nomor_plat;
+    private String merk;
     private int tahun;
     private int harga;
 
-    public DataMobil(string nama, string nomor_plat, string merk, int tahun, int harga) {
+    public DataMobil(String nama, String nomor_plat, String merk, int tahun, int harga) {
         this.nama = nama;
         this.nomor_plat = nomor_plat;
         this.merk = merk;
@@ -24,22 +24,22 @@ public class DataMobil {
         this.harga = harga;
     }
 
-    public string getNama() {
+    public String getNama() {
         return nama;
     }
-    public void setNama(string nama) {
+    public void setNama(String nama) {
         this.nama = nama;
     }
-    public string getNomor_plat() {
+    public String getNomor_plat() {
         return nomor_plat;
     }
-    public void setNomor_plat(string nomor_plat) {
+    public void setNomor_plat(String nomor_plat) {
         this.nomor_plat = nomor_plat;
     }
-    public string getMerk() {
+    public String getMerk() {
         return merk;
     }
-    public void setMerk(string merk) {
+    public void setMerk(String merk) {
         this.merk = merk;
     }
     public int getTahun() {
