@@ -41,9 +41,9 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="tahun" max="32767" attributes="0"/>
-                                          <Component id="merk" max="32767" attributes="0"/>
-                                          <Component id="harga" max="32767" attributes="0"/>
+                                          <Component id="jttahun" max="32767" attributes="0"/>
+                                          <Component id="jtmerk" max="32767" attributes="0"/>
+                                          <Component id="jtharga" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -53,8 +53,8 @@
                                       </Group>
                                       <EmptySpace pref="16" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="nomor_plat" max="32767" attributes="0"/>
-                                          <Component id="nama" min="-2" pref="159" max="-2" attributes="0"/>
+                                          <Component id="jtnomor_plat" max="32767" attributes="0"/>
+                                          <Component id="jtnama" min="-2" pref="159" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -92,27 +92,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nama" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtnama" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nomor_plat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtnomor_plat" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="merk" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtmerk" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tahun" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jttahun" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="harga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtharga" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -216,10 +216,13 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="nama">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="namaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btclearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtnama">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtnamaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -227,9 +230,9 @@
         <Property name="text" type="java.lang.String" value="Nama "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nomor_plat">
+    <Component class="javax.swing.JTextField" name="jtnomor_plat">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomor_platActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtnomor_platActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -237,9 +240,9 @@
         <Property name="text" type="java.lang.String" value="Nomor Plat"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="merk">
+    <Component class="javax.swing.JTextField" name="jtmerk">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="merkActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtmerkActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -247,9 +250,9 @@
         <Property name="text" type="java.lang.String" value="Merk"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tahun">
+    <Component class="javax.swing.JTextField" name="jttahun">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tahunActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jttahunActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -257,9 +260,9 @@
         <Property name="text" type="java.lang.String" value="Tahun"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="harga">
+    <Component class="javax.swing.JTextField" name="jtharga">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hargaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jthargaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -274,7 +277,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="70" max="-2" attributes="0"/>
+                  <Component id="foto" min="-2" pref="70" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -283,17 +286,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="61" max="-2" attributes="0"/>
+                  <Component id="foto" min="-2" pref="61" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="foto">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/fix.jpg"/>
+              <Image iconType="3" name="/Image/fix.jpg"/>
             </Property>
           </Properties>
         </Component>
