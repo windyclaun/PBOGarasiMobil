@@ -2,17 +2,18 @@ import java.sql.*;
 import java.util.*;
 
 import Koneksi.Connector;
+import Model.DataMobil;
 
 public class DataMobilDAO {
     Connection con;
-    public String nama, nomor_plat, merk, tahun, harga;
+    public String nama, nomor_plat, merk;
+    public int tahun, harga;
 
     final String select = "SELECT * FROM mobil";
     public DataMobilDAO(){
         con = Connector.connection();
     }
 
-    @Override
     public void insert(DataMobil dm) {
         PreparedStatement ps = null;
         try{
@@ -25,7 +26,6 @@ public class DataMobilDAO {
         }
     }
 
-    @Override
     public void update(DataMobil dm) {
         PreparedStatement ps = null;
         try{
@@ -38,7 +38,6 @@ public class DataMobilDAO {
         }
     }
 
-    @Override
     public void delete(DataMobil dm) {
         PreparedStatement ps = null;
         try{
@@ -59,12 +58,12 @@ public class DataMobilDAO {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(select);
             while(rs.next()){
-                DataMobil dm = new DataMobil();
+                DataMobil dm = new DataMobil(nama, nomor_plat, merk, tahun, harga);
                 dm.setNama(rs.getString("nama"));
                 dm.setNomor_plat(rs.getString("nomor_plat"));
                 dm.setMerk(rs.getString("merk"));
-                dm.setTahun(rs.getString("tahun"));
-                dm.setHarga(rs.getString("harga"));
+                dm.setTahun(rs.getInt("tahun"));
+                dm.setHarga(rs.getInt("harga"));
                 ld.add(dm);
             }
         }catch(SQLException ex){

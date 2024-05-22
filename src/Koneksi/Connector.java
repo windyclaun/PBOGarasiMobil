@@ -1,8 +1,8 @@
 package Koneksi;
 import java.sql.Connection;
 import java.sql.SQLException;
+import com.mysql.cj.jdbc.MysqlDataSource;   
 
-import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class Connector {
     static Connection con;

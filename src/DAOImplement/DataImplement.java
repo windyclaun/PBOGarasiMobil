@@ -1,3 +1,5 @@
+import java.util.List;
+
 import Model.DataMobil;
 
 public interface DataImplement {

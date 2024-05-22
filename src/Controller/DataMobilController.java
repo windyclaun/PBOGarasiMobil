@@ -1,10 +1,14 @@
-import Main.Main;
+import java.util.List;
+
+import Model.DataMobil;
+import Model.ModelTabelMobil;
+import View.Main;
 import View.MainView;
 
 public class DataMobilController {
     MainView frame;
     DataMobilDAO implement;
-    List<DataMovie> list;
+    List<DataMobil> list;
 
     public DataMobilController(MainView frame){
         this.frame = frame;
@@ -18,7 +22,7 @@ public class DataMobilController {
         frame.getTabelData().setModel(mtm);
     }
 
-    public void insert(String nama, String nomor_plat,String merk, String tahun, String harga){
+    public void insert(String nama, String nomor_plat,String merk, int tahun, int harga){
         DataMobil dm = new DataMobil(nama, nomor_plat, merk, tahun, harga);
         dm.setNama(nama);
         dm.setNomor_plat(nomor_plat);
@@ -28,7 +32,7 @@ public class DataMobilController {
         implement.insert(dm);
     }
 
-    public void update(String nama, String nomor_plat, String merk, String tahun, String harga){
+    public void update(String nama, String nomor_plat, String merk, int tahun, int harga){
         DataMobil dm = new DataMobil(nama, nomor_plat, merk, tahun, harga);
         dm.setNama(nama);
         dm.setNomor_plat(nomor_plat);
@@ -39,7 +43,7 @@ public class DataMobilController {
     }
 
     public void delete(String nama){
-        DataMobil dm = new DataMobil(nama, "", "", "", "");
+        DataMobil dm = new DataMobil(nama, "", "", 0, 0);
         dm.setNama(nama);
         implement.delete(dm);
     }
