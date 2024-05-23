@@ -1,3 +1,4 @@
+package DAO;
 import java.sql.*;
 import java.util.*;
 
@@ -9,7 +10,7 @@ public class DataMobilDAO {
     public String nama, nomor_plat, merk;
     public int tahun, harga;
 
-    final String select = "SELECT * FROM mobil";
+    final String select = "SELECT * FROM data_mobil";
     public DataMobilDAO(){
         con = Connector.connection();
     }
@@ -17,8 +18,8 @@ public class DataMobilDAO {
     public void insert(DataMobil dm) {
         PreparedStatement ps = null;
         try{
-            String query = "INSERT INTO `mobil`(`nama`,`nomor_plat`,`merk`, `tahun`, `harga`) VALUES ('" + dm.getNama() + "','" + dm.getNomor_plat() + "','" + dm.getMerk() + "','" + dm.getTahun() + "','" + dm.getHarga() + "')";
-
+            String query = "INSERT INTO `data_mobil`(`nama`,`nomor_plat`,`merk`, `tahun`, `harga`) VALUES ('" + dm.getNama() + "','" + dm.getNomor_plat() + "','" + dm.getMerk() + "','" + dm.getTahun() + "','" + dm.getHarga() + "')";
+            System.out.println(query);
             ps = con.prepareStatement(query);
             ps.executeUpdate(query);
         }catch(SQLException ex){
@@ -29,7 +30,7 @@ public class DataMobilDAO {
     public void update(DataMobil dm) {
         PreparedStatement ps = null;
         try{
-            String query = "UPDATE `mobil` SET `nomor_plat` = '" + dm.getNomor_plat() + "', `merk` = '" + dm.getMerk() + "', `tahun` = '" + dm.getTahun() + "', `harga` = '" + dm.getHarga() + "' WHERE `nama` = '" + dm.getNama() + "'";
+            String query = "UPDATE `data_mobil` SET `nomor_plat` = '" + dm.getNomor_plat() + "', `merk` = '" + dm.getMerk() + "', `tahun` = '" + dm.getTahun() + "', `harga` = '" + dm.getHarga() + "' WHERE `nama` = '" + dm.getNama() + "'";
             ps = con.prepareStatement(query);
             ps.executeUpdate(query);
         }
@@ -41,7 +42,7 @@ public class DataMobilDAO {
     public void delete(DataMobil dm) {
         PreparedStatement ps = null;
         try{
-            String query = "DELETE FROM `mobil` WHERE `nama` = '" + dm.getNama() + "'";
+            String query = "DELETE FROM `data_mobil` WHERE `nama` = '" + dm.getNama() + "'";
             ps = con.prepareStatement(query);
             ps.executeUpdate(query);
         }
