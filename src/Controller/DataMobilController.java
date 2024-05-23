@@ -1,6 +1,6 @@
 import java.util.List;
 import Model.DataMobil;
-import View.Main;
+import Model.ModelTabelMobil;
 import View.MainView;
 
 public class DataMobilController {

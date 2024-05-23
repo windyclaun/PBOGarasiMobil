@@ -5,8 +5,7 @@
  */
 package View;
 import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
@@ -337,6 +336,8 @@ public class MainView extends javax.swing.JFrame {
         });
     }
 
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabel;
     private javax.swing.JButton btclear;
@@ -357,4 +358,12 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField jtnomor_plat;
     private javax.swing.JTextField jttahun;
     // End of variables declaration//GEN-END:variables
+
+
+    public JTable getTabelData() {
+        return Tabel;
+    }
+    public void setTabelData(JTable Tabel) {
+        this.Tabel = Tabel;
+    }
 }

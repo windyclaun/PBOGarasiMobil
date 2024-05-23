@@ -1,6 +1,10 @@
-import javax.swing.table.AbstractTableModel;
+package Model;
+
+
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
+
 
 public class ModelTabelMobil extends AbstractTableModel{
     private List<DataMobil> list;
