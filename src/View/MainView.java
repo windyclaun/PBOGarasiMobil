@@ -344,23 +344,23 @@ public class MainView extends javax.swing.JFrame {
         jtmerk.setText(Tabel.getValueAt(baris, 2).toString());
         jttahun.setText(Tabel.getValueAt(baris, 3).toString());
         jtharga.setText(Tabel.getValueAt(baris, 4).toString());
-        jtnomor_plat.setEditable(false);
+        jtnomor_plat.setEnabled(false);
     }// GEN-LAST:event_TabelMouseClicked
 
     private void btclearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btclearActionPerformed
-        jtnomor_plat.setEditable(true);
-        jtnama.setText("");
-        jtnomor_plat.setText("");
-        jtmerk.setText("");
-        jttahun.setText("");
-        jtharga.setText("");
+       clearJT();
     }// GEN-LAST:event_btclearActionPerformed
 
     private void bttambahActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_bttambahActionPerformed
+        if(jtnama.getText().equals("") || jtnomor_plat.getText().equals("") || jtmerk.getText().equals("") || jttahun.getText().equals("") || jtharga.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Data tidak boleh kosong");
+            return;
+        }
         DataMobilController dmc = new DataMobilController(this);
         dmc.insert(jtnama.getText(), jtnomor_plat.getText(), jtmerk.getText(), Integer.parseInt(jttahun.getText()),
                 Integer.parseInt(jtharga.getText()));
         dmc.isiTabel();
+        clearJT();
         JOptionPane.showMessageDialog(this, "Data Berhasil Ditambahkan");
     }// GEN-LAST:event_bttambahActionPerformed
 
@@ -373,6 +373,7 @@ public class MainView extends javax.swing.JFrame {
             dmc.update(jtnama.getText(), jtnomor_plat.getText(), jtmerk.getText(), Integer.parseInt(jttahun.getText()),
                     Integer.parseInt(jtharga.getText()));
             dmc.isiTabel();
+            clearJT();
             JOptionPane.showMessageDialog(this, "Data Berhasil Diubah");
         }
     }// GEN-LAST:event_bteditActionPerformed
@@ -383,11 +384,21 @@ public class MainView extends javax.swing.JFrame {
             return;
         } else {
             DataMobilController dmc = new DataMobilController(this);
-            dmc.delete(jtnama.getText());
+            dmc.delete(jtnomor_plat.getText());
             dmc.isiTabel();
+            clearJT();
             JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
         }
     }// GEN-LAST:event_btdeleteActionPerformed
+
+    private void clearJT(){
+        jtnomor_plat.setEnabled(true);
+        jtnama.setText("");
+        jtnomor_plat.setText("");
+        jtmerk.setText("");
+        jttahun.setText("");
+        jtharga.setText("");
+    }
 
     /**
      * @param args the command line arguments

@@ -36,17 +36,11 @@ public class DataMobilController {
 
     public void update(String nama, String nomor_plat, String merk, int tahun, int harga){
         DataMobil dm = new DataMobil(nama, nomor_plat, merk, tahun, harga);
-        dm.setNama(nama);
-        dm.setNomor_plat(nomor_plat);
-        dm.setMerk(merk);
-        dm.setTahun(tahun);
-        dm.setHarga(harga);
         implement.update(dm);
     }
 
-    public void delete(String nama){
-        DataMobil dm = new DataMobil(nama, "", "", 0, 0);
-        dm.setNama(nama);
+    public void delete(String nomor_plat){
+        DataMobil dm = new DataMobil("", nomor_plat, "", 0, 0);
         implement.delete(dm);
     }
 }

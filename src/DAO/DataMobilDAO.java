@@ -30,7 +30,8 @@ public class DataMobilDAO {
     public void update(DataMobil dm) {
         PreparedStatement ps = null;
         try{
-            String query = "UPDATE `data_mobil` SET `nomor_plat` = '" + dm.getNomor_plat() + "', `merk` = '" + dm.getMerk() + "', `tahun` = '" + dm.getTahun() + "', `harga` = '" + dm.getHarga() + "' WHERE `nama` = '" + dm.getNama() + "'";
+            //update semua data menggunakan parameter nomor plat
+            String query = "UPDATE `data_mobil` SET `nama` = '" + dm.getNama() + "', `merk` = '" + dm.getMerk() + "', `tahun` = '" + dm.getTahun() + "', `harga` = '" + dm.getHarga() + "' WHERE `nomor_plat` = '" + dm.getNomor_plat() + "'";
             ps = con.prepareStatement(query);
             ps.executeUpdate(query);
         }
@@ -42,7 +43,8 @@ public class DataMobilDAO {
     public void delete(DataMobil dm) {
         PreparedStatement ps = null;
         try{
-            String query = "DELETE FROM `data_mobil` WHERE `nama` = '" + dm.getNama() + "'";
+            //hapus harga berdasarkan nomor plat
+            String query = "DELETE FROM `data_mobil` WHERE `nomor_plat` = '" + dm.getNomor_plat() + "'";
             ps = con.prepareStatement(query);
             ps.executeUpdate(query);
         }
