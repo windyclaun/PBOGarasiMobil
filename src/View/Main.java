@@ -14,6 +14,6 @@ public class Main {
         MainView frame = new MainView();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-    }
+    } 
     
 }
